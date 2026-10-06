@@ -1,0 +1,416 @@
+{
+  "_notaAlergenos": "Los alérgenos incluidos son una base provisional construida a partir de los ingredientes indicados en la carta. Deben verificarse con las fichas técnicas reales de masas, quesos, embutidos y salsas antes de publicarlos como información definitiva.",
+  "categorias": [
+    {
+      "id": "tradicionales",
+      "nombre": "Tradicionales"
+    },
+    {
+      "id": "base-crema",
+      "nombre": "Base crema"
+    },
+    {
+      "id": "especiales",
+      "nombre": "Especiales"
+    },
+    {
+      "id": "vegetarianas",
+      "nombre": "Vegetarianas"
+    }
+  ],
+  "pizzas": [
+    {
+      "id": 1,
+      "nombre": "Margarita",
+      "categoria": "tradicionales",
+      "etiquetas": [],
+      "precio": 10,
+      "ingredientes": [
+        "Tomate",
+        "mozzarella"
+      ],
+      "alergenos": [
+        "gluten",
+        "lacteo"
+      ],
+      "imagen": null,
+      "destacada": true
+    },
+    {
+      "id": 2,
+      "nombre": "Quatro K",
+      "categoria": "tradicionales",
+      "etiquetas": [],
+      "precio": 10,
+      "ingredientes": [
+        "Tomate",
+        "mozzarella",
+        "roquefort",
+        "3 quesos"
+      ],
+      "alergenos": [
+        "gluten",
+        "lacteo"
+      ],
+      "imagen": null,
+      "destacada": true
+    },
+    {
+      "id": 3,
+      "nombre": "Diavola",
+      "categoria": "tradicionales",
+      "etiquetas": [],
+      "precio": 10,
+      "ingredientes": [
+        "Tomate",
+        "mozzarella",
+        "pepperoni"
+      ],
+      "alergenos": [
+        "gluten",
+        "lacteo"
+      ],
+      "imagen": null,
+      "destacada": true
+    },
+    {
+      "id": 4,
+      "nombre": "Prosciutto",
+      "categoria": "tradicionales",
+      "etiquetas": [],
+      "precio": 10,
+      "ingredientes": [
+        "Tomate",
+        "mozzarella",
+        "jamón york"
+      ],
+      "alergenos": [
+        "gluten",
+        "lacteo"
+      ],
+      "imagen": null,
+      "destacada": false
+    },
+    {
+      "id": 5,
+      "nombre": "Prosciutto y champiñones",
+      "categoria": "tradicionales",
+      "etiquetas": [],
+      "precio": 10,
+      "ingredientes": [
+        "Tomate",
+        "mozzarella",
+        "jamón york",
+        "champiñones"
+      ],
+      "alergenos": [
+        "gluten",
+        "lacteo"
+      ],
+      "imagen": null,
+      "destacada": true
+    },
+    {
+      "id": 6,
+      "nombre": "Prosciutto y atún",
+      "categoria": "tradicionales",
+      "etiquetas": [],
+      "precio": 10,
+      "ingredientes": [
+        "Tomate",
+        "mozzarella",
+        "jamón york",
+        "atún"
+      ],
+      "alergenos": [
+        "gluten",
+        "lacteo",
+        "pescado"
+      ],
+      "imagen": null,
+      "destacada": false
+    },
+    {
+      "id": 7,
+      "nombre": "Bacón y champiñones",
+      "categoria": "tradicionales",
+      "etiquetas": [],
+      "precio": 10,
+      "ingredientes": [
+        "Tomate",
+        "mozzarella",
+        "bacón",
+        "champiñones"
+      ],
+      "alergenos": [
+        "gluten",
+        "lacteo"
+      ],
+      "imagen": null,
+      "destacada": false
+    },
+    {
+      "id": 8,
+      "nombre": "Atún, cebolla y pimiento verde",
+      "categoria": "tradicionales",
+      "etiquetas": [],
+      "precio": 10,
+      "ingredientes": [
+        "Tomate",
+        "mozzarella",
+        "atún",
+        "cebolla",
+        "pimiento verde"
+      ],
+      "alergenos": [
+        "gluten",
+        "lacteo",
+        "pescado"
+      ],
+      "imagen": null,
+      "destacada": false
+    },
+    {
+      "id": 9,
+      "nombre": "Solo Atún",
+      "categoria": "tradicionales",
+      "etiquetas": [],
+      "precio": 10,
+      "ingredientes": [
+        "Tomate",
+        "mozzarella",
+        "atún"
+      ],
+      "alergenos": [
+        "gluten",
+        "lacteo",
+        "pescado"
+      ],
+      "imagen": null,
+      "destacada": false
+    },
+    {
+      "id": 10,
+      "nombre": "Solo Bacón",
+      "categoria": "tradicionales",
+      "etiquetas": [],
+      "precio": 10,
+      "ingredientes": [
+        "Tomate",
+        "mozzarella",
+        "bacón"
+      ],
+      "alergenos": [
+        "gluten",
+        "lacteo"
+      ],
+      "imagen": null,
+      "destacada": false
+    },
+    {
+      "id": 11,
+      "nombre": "Caramelizada",
+      "categoria": "base-crema",
+      "etiquetas": [
+        "vegetarianas"
+      ],
+      "precio": 11,
+      "ingredientes": [
+        "Queso de cabra",
+        "cebolla caramelizada"
+      ],
+      "alergenos": [
+        "gluten",
+        "lacteo"
+      ],
+      "imagen": null,
+      "destacada": false
+    },
+    {
+      "id": 12,
+      "nombre": "Cremosa BBQ",
+      "categoria": "base-crema",
+      "etiquetas": [],
+      "precio": 11,
+      "ingredientes": [
+        "Mozzarella",
+        "bacón",
+        "pollo",
+        "cebolla",
+        "champiñones",
+        "salsa BBQ"
+      ],
+      "alergenos": [
+        "gluten",
+        "lacteo"
+      ],
+      "imagen": null,
+      "destacada": false
+    },
+    {
+      "id": 13,
+      "nombre": "Carbonara",
+      "categoria": "base-crema",
+      "etiquetas": [],
+      "precio": 11,
+      "ingredientes": [
+        "Mozzarella",
+        "bacón",
+        "champiñones",
+        "orégano"
+      ],
+      "alergenos": [
+        "gluten",
+        "lacteo"
+      ],
+      "imagen": null,
+      "destacada": false
+    },
+    {
+      "id": 14,
+      "nombre": "Andaluza",
+      "categoria": "especiales",
+      "etiquetas": [],
+      "precio": 12,
+      "ingredientes": [
+        "Mozzarella",
+        "pollo",
+        "cebolla",
+        "jamón serrano",
+        "pimiento verde",
+        "salsa de la casa"
+      ],
+      "alergenos": [
+        "gluten",
+        "lacteo"
+      ],
+      "imagen": null,
+      "destacada": false
+    },
+    {
+      "id": 15,
+      "nombre": "Deluxe",
+      "categoria": "especiales",
+      "etiquetas": [],
+      "precio": 12,
+      "ingredientes": [
+        "Mozzarella",
+        "pimiento",
+        "ternera",
+        "cebolla",
+        "champiñones",
+        "pepperoni"
+      ],
+      "alergenos": [
+        "gluten",
+        "lacteo"
+      ],
+      "imagen": null,
+      "destacada": false
+    },
+    {
+      "id": 16,
+      "nombre": "Rústica",
+      "categoria": "especiales",
+      "etiquetas": [],
+      "precio": 12,
+      "ingredientes": [
+        "Mozzarella",
+        "ternera",
+        "cebolla",
+        "bacón",
+        "champiñones"
+      ],
+      "alergenos": [
+        "gluten",
+        "lacteo"
+      ],
+      "imagen": null,
+      "destacada": false
+    },
+    {
+      "id": 17,
+      "nombre": "Vegetariana",
+      "categoria": "especiales",
+      "etiquetas": [
+        "vegetarianas"
+      ],
+      "precio": 12,
+      "ingredientes": [
+        "Mozzarella",
+        "cebolla",
+        "champiñones",
+        "pimiento",
+        "tomate cherry",
+        "aceitunas negras"
+      ],
+      "alergenos": [
+        "gluten",
+        "lacteo"
+      ],
+      "imagen": null,
+      "destacada": true
+    }
+  ],
+  "bebidas": [
+    {
+      "nombre": "Coca-Cola",
+      "precio": 1.5
+    },
+    {
+      "nombre": "Coca-Cola Zero",
+      "precio": 1.5
+    },
+    {
+      "nombre": "Fanta Naranja",
+      "precio": 1.5
+    },
+    {
+      "nombre": "Fuze Tea Maracuyá",
+      "precio": 1.5
+    },
+    {
+      "nombre": "Fuze Tea",
+      "precio": 1.5
+    },
+    {
+      "nombre": "Cerveza Cruzcampo",
+      "precio": 1.5
+    },
+    {
+      "nombre": "Blue Camaleón",
+      "precio": 0.7
+    },
+    {
+      "nombre": "Agua",
+      "precio": 1.0
+    }
+  ],
+  "postres": {
+    "precio": 4.8,
+    "tarros": [
+      "Oreo",
+      "Kinder",
+      "Ferrero",
+      "Happy Hippo",
+      "Crema de Lotus",
+      "Chocolate con galletas",
+      "Chocolate blanco con galletas maría",
+      "Cheesecake Dulce de Leche"
+    ],
+    "porciones": [
+      "Tarta de Queso",
+      "Tarta de Queso con brownie, nueces y oreo",
+      "Tarta de pistacho y chocolate blanco",
+      "Tarta de Red Velvet"
+    ]
+  },
+  "contacto": {
+    "telefono": "603 678 738"
+  },
+  "redes": {
+    "instagram": "rusticanapoletanastylexxl",
+    "facebook": "rusticanapoletanastylexxl",
+    "tiktok": "rusticanapoletana"
+  }
+}

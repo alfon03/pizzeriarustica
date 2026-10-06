@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18240f">
+
+  <meta
+    name="description"
+    content="Carta de Pizzería Rústica Napoletana Style XXL en Lora del Río, Sevilla."
+  >
+
+  <title>Carta | Pizzería Rústica Napoletana Style XXL</title>
+    <link rel="icon" type="image/png" href="assets/logorustica.png">
+    <link rel="apple-touch-icon" href="assets/logorustica.png">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Yellowtail&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+
+    <a
+      class="brand brand-logo"
+      href="index.html#inicio"
+      aria-label="Volver al inicio"
+    >
+      <img
+        class="logo"
+        src="assets/logorustica.png"
+        alt="Pizzería Rústica Napoletana Style XXL"
+      >
+    </a>
+
+    <button
+      class="hamb"
+      type="button"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="main-nav"
+    >
+      <svg class="ui-icon menu-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-menu"></use></svg>
+    </button>
+
+    <nav
+      id="main-nav"
+      class="main-nav"
+      aria-label="Navegación principal"
+    >
+      <a href="index.html#inicio">Inicio</a>
+      <a class="active" href="#pizzas-carta">Carta</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+
+    <a
+      class="brush-btn header-location hero-location-btn"
+      href="https://www.google.com/maps/search/?api=1&query=C.%20Marcos%20Orbaneja%2012%2C%2041440%20Lora%20del%20R%C3%ADo%2C%20Sevilla"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Cómo llegar a Pizzería Rústica"
+    >
+      Cómo llegar
+    </a>
+
+  </header>
+
+
+  <main class="carta-page">
+
+    <section class="carta-hero reveal-on-scroll" aria-labelledby="carta-title">
+      <div class="carta-hero-inner">
+        <span class="script">Nuestra</span>
+        <h1 id="carta-title">CARTA</h1>
+
+        <div class="italy-line" aria-hidden="true"></div>
+
+        <p>
+          Pizzas estilo napolitano XXL, bebidas y postres.
+        </p>
+
+        <a class="carta-back-home" href="index.html#pizzas">
+          <svg class="ui-icon btn-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-arrow-left"></use></svg> Volver a la web
+        </a>
+      </div>
+    </section>
+
+
+    <section
+      id="pizzas-carta"
+      class="pizzas carta-pizzas paper reveal-on-scroll"
+      aria-labelledby="carta-pizzas-title"
+    >
+
+      <div class="section-head">
+
+        <div class="section-title">
+          <span class="script olive">Todas las</span>
+          <h2 id="carta-pizzas-title">PIZZAS</h2>
+        </div>
+
+        <div
+          id="carta-tabs"
+          class="tabs"
+          role="tablist"
+          aria-label="Categorías de pizzas"
+        >
+          <span class="menu-loading">
+            Cargando categorías…
+          </span>
+        </div>
+
+      </div>
+
+
+      <div
+        id="carta-pizza-grid"
+        class="pizza-grid carta-pizza-grid"
+        aria-live="polite"
+        aria-busy="true"
+      >
+        <p class="menu-loading">
+          Cargando pizzas…
+        </p>
+      </div>
+
+    </section>
+
+
+    <section
+      class="carta-extras paper reveal-on-scroll"
+      aria-label="Bebidas y postres"
+    >
+
+      <article class="carta-list-card">
+
+        <div class="carta-list-heading">
+          <span class="carta-section-icon" aria-hidden="true"><svg class="ui-icon"><use href="assets/ui-icons.svg#icon-cup"></use></svg></span>
+          <span class="script">Nuestras</span>
+          <h2>BEBIDAS</h2>
+        </div>
+
+        <div
+          id="bebidas-list"
+          class="menu-list"
+        ></div>
+
+      </article>
+
+
+      <article class="carta-list-card">
+
+        <div class="carta-list-heading">
+          <span class="carta-section-icon" aria-hidden="true"><svg class="ui-icon"><use href="assets/ui-icons.svg#icon-cake"></use></svg></span>
+          <span class="script">Algo dulce</span>
+          <h2>POSTRES</h2>
+        </div>
+
+        <h3>TARROS</h3>
+
+        <div
+          id="postres-tarros"
+          class="menu-list"
+        ></div>
+
+        <h3 class="menu-subheading">
+          PORCIONES
+        </h3>
+
+        <div
+          id="postres-porciones"
+          class="menu-list"
+        ></div>
+
+      </article>
+
+    </section>
+
+
+    <section
+      id="alergenos"
+      class="allergen-info paper reveal-on-scroll"
+      aria-labelledby="allergen-title"
+    >
+
+      <div class="allergen-info-copy">
+
+        <span class="script olive">
+          Información
+        </span>
+
+        <h2 id="allergen-title">
+          ALÉRGENOS
+        </h2>
+
+        <p>
+          Consulta los iconos indicados en cada pizza.
+          Si tienes una alergia o intolerancia, consúltanos
+          antes de realizar tu pedido.
+        </p>
+
+      </div>
+
+      <div
+        id="allergen-legend"
+        class="allergen-legend"
+      ></div>
+
+    </section>
+  </main>
+
+
+  <footer class="site-footer">
+
+    <div class="footer-brand">
+      <a href="index.html#inicio" aria-label="Volver al inicio">
+        <img
+          src="assets/logorustica.png"
+          alt="Rústica Napoletana Style XXL"
+        >
+      </a>
+    </div>
+
+
+    <nav
+      class="footer-nav"
+      aria-label="Navegación del pie de página"
+    >
+      <a href="index.html#inicio">Inicio</a>
+      <a href="#pizzas-carta">Carta</a>
+      <a href="index.html#pizzeria">La Pizzería</a>
+      <a href="index.html#galeria">Galería</a>
+      <a href="index.html#resenas">Reseñas</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+
+
+    <div class="footer-right">
+
+      <div class="footer-social" aria-label="Redes sociales">
+        <a class="social-icon instagram" href="https://www.instagram.com/rusticanapoletanastylexxl/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Pizzería Rústica" title="Instagram">
+          <svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-instagram"></use></svg>
+        </a>
+        <a class="social-icon facebook" href="https://www.facebook.com/profile.php?id=61574863953987&mibextid=wwXIfr&rdid=zs8juwAtOFa4R2EN&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CR8Ay4qjy%2F%3Fmibextid%3DwwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Pizzería Rústica" title="Facebook">
+          <svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-facebook"></use></svg>
+        </a>
+        <a class="social-icon tiktok" href="https://www.tiktok.com/@rusticanapoletana" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Pizzería Rústica" title="TikTok">
+          <svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-tiktok"></use></svg>
+        </a>
+        <a class="social-icon maps-icon" href="https://www.google.com/maps/search/?api=1&query=C.%20Marcos%20Orbaneja%2012%2C%2041440%20Lora%20del%20R%C3%ADo%2C%20Sevilla" target="_blank" rel="noopener noreferrer" aria-label="Pizzería Rústica en Google Maps" title="Google Maps">
+          <svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-map-pin"></use></svg>
+        </a>
+        <span class="footer-italy" aria-hidden="true"></span>
+      </div>
+
+      <div class="footer-links">
+        <a href="#pizzas-carta">Carta</a>
+        <i>|</i>
+        <a href="#alergenos">Alérgenos</a>
+        <i>|</i>
+        <span>Privacidad</span>
+      </div>
+
+    </div>
+
+
+    <small>
+      © 2026 Pizzería Rústica. Todos los derechos reservados.
+    </small>
+
+  </footer>
+
+
+  <script src="carta.js" defer></script>
+
+</body>
+</html>
