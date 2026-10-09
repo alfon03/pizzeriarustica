@@ -1,5 +1,5 @@
 {
-  "_notaAlergenos": "Los alérgenos incluidos son una base provisional construida a partir de los ingredientes indicados en la carta. Deben verificarse con las fichas técnicas reales de masas, quesos, embutidos y salsas antes de publicarlos como información definitiva.",
+  "_notaAlergenos": "Información de alérgenos para PIZZAS basada en los ingredientes comunicados. Todas las masas contienen cereales con gluten. La mozzarella y demás quesos elaborados con leche (aunque sean sin lactosa), y la nata, contienen el alérgeno LECHE. Las pizzas con atún contienen PESCADO. Verificar antes de publicar las fichas técnicas de masa, quesos, nata, embutidos, salsas y productos elaborados, además del riesgo de contacto cruzado. Bebidas y postres pendientes de fichas técnicas.",
   "categorias": [
     {
       "id": "tradicionales",
@@ -12,10 +12,6 @@
     {
       "id": "especiales",
       "nombre": "Especiales"
-    },
-    {
-      "id": "vegetarianas",
-      "nombre": "Vegetarianas"
     }
   ],
   "pizzas": [
@@ -211,9 +207,7 @@
       "id": 11,
       "nombre": "Caramelizada",
       "categoria": "base-crema",
-      "etiquetas": [
-        "vegetarianas"
-      ],
+      "etiquetas": [],
       "precio": 11,
       "ingredientes": [
         "Queso de cabra",
@@ -332,9 +326,7 @@
       "id": 17,
       "nombre": "Vegetariana",
       "categoria": "especiales",
-      "etiquetas": [
-        "vegetarianas"
-      ],
+      "etiquetas": [],
       "precio": 12,
       "ingredientes": [
         "Mozzarella",

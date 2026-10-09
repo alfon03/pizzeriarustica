@@ -1,0 +1,195 @@
+/* Rústica · mejoras de presentación V3
+   Mantiene la estética original (hojas, pinceladas, fotografía principal y texturas).
+   Cambios aislados aquí para facilitar futuros retoques. */
+:root { --readable-ink:#34402c; }
+html { scroll-padding-top:90px; }
+.skip-link { position:fixed; inset:10px auto auto 12px; z-index:1500; transform:translateY(-160%); padding:12px 17px; border-radius:9px; background:#fffdf5; color:var(--green-dark); font-weight:700; box-shadow:0 5px 15px #0005; }
+.skip-link:focus { transform:translateY(0); }
+:where(a,button):focus-visible { outline:3px solid #eeb573; outline-offset:3px; }
+.main-nav a, .topbar nav a { font-size:clamp(12px, 1.1vw, 14px); }
+.header-call { min-width:150px; font-size:11px; }
+.hero-script { max-width:530px; }
+.hero-cta, .hero-map-btn, .contact-call, .carta-call-primary { font-size:clamp(11px,1.05vw,13px); }
+.hero-buttons { gap:12px; }
+.pizzas .section-head { margin-bottom:clamp(18px,2.2vw,30px); }
+.tabs { max-width:100%; }
+.tabs button { min-height:42px; font-size:12px; line-height:1.2; }
+.tabs button.selected { font-size:11px; }
+.pizza-grid { align-items:stretch; }
+.pizza-card { overflow:hidden; min-width:0; display:flex; flex-direction:column; }
+.pizza-card > .pizza-placeholder { flex:0 0 auto; }
+.pizza-card > .pizza-placeholder img { max-height:100%; }
+.pizza-card .pizza-card-body { flex:1; display:flex; flex-direction:column; padding:18px; }
+.pizza-card h3, .carta-pizza-grid .pizza-card h3 { min-height:0; font-size:clamp(15px,1.27vw,18px); line-height:1.25; letter-spacing:-.15px; }
+.pizza-card p, .carta-pizza-grid .pizza-card p { min-height:0; font-size:clamp(12px,1vw,14px); line-height:1.48; color:#555e4a; margin:9px 0 0; }
+.pizza-card-bottom { display:flex; flex-direction:column; align-items:flex-start; margin-top:auto; padding-top:13px; gap:10px; }
+.pizza-card-bottom .pizza-price { display:block; margin:0; font-size:clamp(19px,1.5vw,23px); line-height:1.1; }
+.pizza-allergens { display:flex; gap:6px; flex-wrap:wrap; min-width:0; }
+.pizza-allergens .allergen-tag { display:inline-flex; align-items:center; gap:5px; padding:4px 9px 4px 5px; border-radius:999px; border:1px solid rgba(40,54,24,.14); background:rgba(247,240,221,.76); color:#3a4a32; font-size:11px; font-weight:700; line-height:1; white-space:nowrap; }
+.pizza-allergens .allergen-tag img { width:24px; height:24px; object-fit:contain; }
+.home-allergen-note { max-width:790px; margin:24px auto 0; font-size:clamp(12px,1.08vw,14px); line-height:1.65; text-align:center; color:#525f48; }
+.home-allergen-note a { text-decoration:underline; text-underline-offset:3px; color:var(--green); font-weight:700; }
+.local-photos img { aspect-ratio:1/1; width:100%; object-fit:cover; border-radius:8px; }
+.gallery-disclaimer { display:block; margin-top:8px; color:var(--muted); font-size:11px; }
+.passion p, .local-copy p, .review-card p { font-size:clamp(13px,1vw,15px); line-height:1.65; }
+.trait { font-size:clamp(11px,.92vw,13px); }
+.review-card small { font-size:12px; }
+.contact h3 { font-size:clamp(15px,1.22vw,18px); }
+.contact address, .contact p { font-size:clamp(13px,1.05vw,15px); }
+.contact .schedule div { font-size:clamp(12px,1vw,14px); min-height:26px; }
+.contact-call { max-width:245px; }
+.contact .contact-whatsapp { font-size:13px; }
+.menu-row { font-size:clamp(13px,1.05vw,15px); min-height:44px; }
+.menu-row strong { font-size:clamp(14px,1.08vw,16px); }
+.carta-list-card > h3 { font-size:14px; }
+.allergen-info { align-items:start; gap:30px; }
+.allergen-info-copy h2 { font-size:clamp(23px,2.55vw,35px); line-height:1.2; }
+.allergen-info-copy p { font-size:clamp(13px,1.06vw,15px); line-height:1.7; }
+.allergen-info-copy .allergen-explanation { margin-top:14px; }
+.allergen-legend { display:flex; flex-wrap:wrap; gap:10px 20px; margin:18px 0; }
+.allergen-legend-item { display:flex; align-items:center; gap:7px; font-size:13px; font-weight:700; color:#34472c; }
+.allergen-legend-item .allergen-icon { width:40px; height:40px; flex:0 0 40px; background:transparent; border:0; padding:0; }
+.allergen-legend-item .allergen-icon img { display:block; width:40px; height:40px; object-fit:contain; }
+.footer-links .footer-notice { max-width:180px; display:inline-block; line-height:1.4; }
+.footer-nav a, footer nav a { font-size:clamp(11px,.96vw,13px); }
+/* Tablet y móvil: menos recortes, tarjetas legibles, acciones accesibles */
+@media (max-width: 1000px) {
+  .topbar { gap:12px; }
+  .section-head { flex-wrap:wrap; }
+  .pizza-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
+@media (max-width: 800px) {
+  html { scroll-padding-top:74px; }
+  .topbar { min-height:70px; }
+  .main-nav.is-open { box-shadow:0 16px 26px #14210d40; }
+  .main-nav a { min-height:44px; display:flex; align-items:center; }
+  .pizza-grid, .carta-pizza-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .pizza-card > .pizza-placeholder, .carta-pizza-grid .pizza-card > .pizza-placeholder { height:clamp(135px,24vw,185px); }
+  .pizza-card .pizza-card-body { padding:16px; }
+  .pizza-card h3, .carta-pizza-grid .pizza-card h3 { font-size:16px; }
+  .pizza-card p, .carta-pizza-grid .pizza-card p { font-size:13px; }
+  .local-copy { padding-right:0; }
+  .local-photos img { min-height:0; height:clamp(110px,20vw,170px); }
+  .reviews { align-items:stretch; }
+  .reviews .review-card p { font-size:13px; }
+  .mobile-phone-cta { min-height:52px; font-size:13px; }
+  .allergen-info { gap:20px; }
+  .allergen-contact { justify-content:flex-start; }
+}
+@media (max-width: 620px) {
+  .section-head { gap:18px; }
+  .tabs { width:100%; display:flex; overflow-x:auto; scrollbar-width:thin; gap:5px; padding:5px 1px 9px; scroll-snap-type:x proximity; }
+  .tabs button, .tabs .selected { flex:0 0 auto; width:auto; min-width:100px; min-height:44px; padding:9px 15px; font-size:12px; scroll-snap-align:start; }
+  .tabs button + button::before { display:none; }
+  .pizza-grid, .carta-pizza-grid { grid-template-columns:1fr; gap:14px; }
+  .pizza-card, .carta-pizza-grid .pizza-card { display:grid; grid-template-columns:minmax(110px,34%) minmax(0,1fr); min-height:174px; }
+  .pizza-card > .pizza-placeholder, .carta-pizza-grid .pizza-card > .pizza-placeholder { height:100%; min-height:174px; }
+  .pizza-card > .pizza-placeholder img { max-width:74%; }
+  .pizza-card .pizza-card-body, .pizza-card > .pizza-card-body { padding:15px 12px; }
+  .pizza-card h3, .carta-pizza-grid .pizza-card h3 { font-size:15px; }
+  .pizza-card p, .carta-pizza-grid .pizza-card p { font-size:12px; line-height:1.4; }
+  .pizza-card-bottom { gap:9px; padding-top:11px; }
+  .pizza-card-bottom .pizza-price { font-size:19px; }
+  .pizza-allergens .allergen-tag { font-size:10px; padding:3px 6px 3px 3px; gap:3px; }
+  .pizza-allergens .allergen-tag img { width:19px; height:19px; }
+  .hero { background-position:center, right center, center; }
+  .hero-content { padding-bottom:35px; }
+  .local-photos { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .local-photos img { height:clamp(95px,28vw,145px); }
+  .contact-call { margin-top:8px; }
+  .carta-extras { grid-template-columns:1fr; }
+  .allergen-info { display:block; }
+  .allergen-contact { margin-top:24px; }
+  .home-allergen-note { text-align:left; }
+  .footer-links .footer-notice { max-width:150px; }
+}
+@media (max-width:380px) {
+  .pizza-card, .carta-pizza-grid .pizza-card { grid-template-columns:100px minmax(0,1fr); }
+  .pizza-card > .pizza-placeholder, .carta-pizza-grid .pizza-card > .pizza-placeholder { min-height:190px; }
+  .pizza-card .pizza-card-body { padding:13px 10px; }
+  .pizza-card h3, .carta-pizza-grid .pizza-card h3 { font-size:14px; }
+  .pizza-allergens { gap:3px; }
+  .pizza-allergens .allergen-tag { font-size:10px; }
+  .mobile-phone-cta { font-size:11px; left:8px; right:8px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  .pizza-card, .pizza-card > img, .hero-cta, .outline-btn { transition:none!important; transform:none!important; }
+  .reveal-on-scroll, .carta-card-animate { opacity:1!important; transform:none!important; }
+}
+
+
+/* =========================================================
+   RÚSTICA V4 — RESEÑAS REALES Y AFINADO RESPONSIVE
+   Mantiene las imágenes, texturas, hojas y tipografía original.
+   ========================================================= */
+:root { color-scheme: light; }
+html { scroll-behavior:smooth; }
+#inicio, #pizzas, #resenas, #contacto, #alergenos { scroll-margin-top:88px; }
+.reviews-v4 {
+  grid-template-columns:minmax(220px,.95fr) minmax(0,3.1fr);
+  gap:clamp(20px,3.5vw,54px);
+  align-items:center;
+  padding-block:clamp(35px,4.3vw,65px);
+  min-height:295px;
+}
+.reviews-v4 > * { min-width:0; position:relative; z-index:1; }
+.reviews-v4 .reviews-brand { gap:10px; }
+.reviews-v4 .reviews-eyebrow { font:700 11px/1.3 'DM Sans',sans-serif; letter-spacing:.18em; color:#e4a36a; }
+.reviews-v4 h2 { font-size:clamp(24px,2.2vw,33px); line-height:1.15; }
+.reviews-v4 .reviews-intro { font-size:clamp(13px,1vw,15px); line-height:1.65; color:#e8e4d7; }
+.reviews-v4 .reviews-links { display:flex; flex-wrap:wrap; align-items:center; gap:7px 18px; }
+.reviews-v4 .reviews-brand .reviews-google-link { margin:0; min-width:0; min-height:44px; height:auto; display:inline-flex; align-items:center; justify-content:center; text-align:center; gap:8px; padding:11px 15px; border-radius:4px; font-size:10px; font-weight:800; }
+.reviews-v4 .reviews-write-link { color:#fff5df; font-size:13px; font-weight:700; text-decoration:underline; text-decoration-color:#df9b5e; text-underline-offset:5px; padding:10px 0; }
+.reviews-v4 .reviews-write-link:hover { color:#f5b77c; }
+.reviews-v4 .reviews-disclaimer { display:block; margin-top:3px; max-width:32ch; color:#adb7a5; line-height:1.5; font-size:11px; }
+.reviews-carousel { width:100%; min-width:0; }
+.reviews-track { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); align-items:stretch; gap:15px; }
+.reviews-v4 .review-testimonial { display:flex; flex-direction:column; margin:0; padding:clamp(16px,1.5vw,23px); min-width:0; min-height:210px; border:1px solid #f8eac12d; border-radius:12px; background:linear-gradient(150deg,#ffffff0f,#ffffff04); }
+.reviews-v4 .review-stars { display:block; margin-bottom:12px; color:#f1b969; letter-spacing:.15em; font-size:16px; }
+.reviews-v4 .review-testimonial p { color:#f7f0df; font-family:'DM Sans',sans-serif; font-size:clamp(13px,1.05vw,15px); line-height:1.62; overflow-wrap:anywhere; }
+.reviews-v4 .review-author { display:flex; align-items:center; gap:9px; margin-top:auto; padding-top:18px; }
+.reviews-v4 .review-author strong { display:block; color:#f9f2e5; font-size:12px; font-weight:700; line-height:1.35; }
+.reviews-v4 .review-author small { margin-top:2px; font-size:10px; color:#b5c0aa; }
+.reviews-v4 .review-avatar { display:flex; align-items:center; justify-content:center; flex:0 0 32px; height:32px; border-radius:50%; color:#452d16; background:#eac18b; font:700 14px/1 'DM Sans',sans-serif; }
+.reviews-controls[hidden] { display:none; }
+.reviews-controls { margin-top:15px; display:flex; align-items:center; justify-content:space-between; gap:14px; }
+.reviews-pagination { color:#f4ddbb; font-size:12px; font-weight:600; letter-spacing:.035em; }
+.reviews-buttons { display:flex; gap:8px; }
+.reviews-buttons button { display:grid; place-items:center; width:42px; height:42px; border-radius:50%; border:1px solid #eadbb66b; background:#fff9e012; color:#fff5e5; cursor:pointer; font:700 17px/1 'DM Sans',sans-serif; transition:background .18s,border-color .18s; }
+.reviews-buttons button:hover { background:#fff9e030; border-color:#f4c890; }
+.reviews-buttons button:focus-visible { outline:3px solid #ffbf83; outline-offset:3px; }
+.reviews-v4 .review-card:hover { transform:none; }
+/* Distintas cantidades de tarjetas visibles según el tamaño. */
+@media(max-width:1100px) {
+  .reviews-v4 { grid-template-columns:minmax(0,1fr); gap:24px; }
+  .reviews-v4 .reviews-brand { align-items:center; text-align:center; }
+  .reviews-v4 .reviews-disclaimer { max-width:65ch; }
+  .reviews-v4 .reviews-links { justify-content:center; }
+  .reviews-track { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .reviews-track .review-testimonial:nth-child(n+3) { display:none; }
+}
+@media(max-width:620px) {
+  .reviews-v4 { padding:34px 6.5% 29px; gap:21px; }
+  .reviews-v4 .reviews-brand { align-items:flex-start; text-align:left; }
+  .reviews-v4 .reviews-links { justify-content:flex-start; }
+  .reviews-v4 .reviews-disclaimer { max-width:40ch; }
+  .reviews-track { grid-template-columns:minmax(0,1fr); }
+  .reviews-track .review-testimonial:nth-child(n+2) { display:none; }
+  .reviews-v4 .review-testimonial { min-height:188px; }
+  .reviews-v4 .review-testimonial p { font-size:14px; }
+  .reviews-controls { margin-top:10px; }
+  .contact .contact-whatsapp { min-height:44px; align-items:center; }
+  .main-nav.is-open { max-height:calc(100dvh - 70px); overflow-y:auto; }
+  .mobile-phone-cta { padding-bottom:max(10px,env(safe-area-inset-bottom)); }
+}
+@media (max-width:390px) {
+  .reviews-v4 h2 { font-size:25px; }
+  .reviews-v4 .reviews-google-link { width:100%; }
+  .reviews-v4 .reviews-links { width:100%; }
+  .reviews-v4 .review-testimonial { padding:16px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  .reviews-buttons button, .reviews-v4 .review-testimonial { transition:none; }
+}

@@ -11,62 +11,9 @@ let filtroActivo = "all";
 
 
 const ALERGENOS = {
-  gluten: {
-    nombre: "Gluten",
-    icono: "assets/alergenos/gluten.svg"
-  },
-  crustaceo: {
-    nombre: "Crustáceos",
-    icono: "assets/alergenos/crustaceo.svg"
-  },
-  huevo: {
-    nombre: "Huevo",
-    icono: "assets/alergenos/huevo.svg"
-  },
-  pescado: {
-    nombre: "Pescado",
-    icono: "assets/alergenos/pescado.svg"
-  },
-  cacahuete: {
-    nombre: "Cacahuete",
-    icono: "assets/alergenos/cacahuete.svg"
-  },
-  soja: {
-    nombre: "Soja",
-    icono: "assets/alergenos/soja.svg"
-  },
-  lacteo: {
-    nombre: "Lácteos",
-    icono: "assets/alergenos/lacteo.svg"
-  },
-  "frutos-secos": {
-    nombre: "Frutos secos",
-    icono: "assets/alergenos/frutos secos.svg"
-  },
-  apio: {
-    nombre: "Apio",
-    icono: "assets/alergenos/apio.svg"
-  },
-  mostaza: {
-    nombre: "Mostaza",
-    icono: "assets/alergenos/mostaza.svg"
-  },
-  sesamo: {
-    nombre: "Sésamo",
-    icono: "assets/alergenos/sesamo.svg"
-  },
-  sulfitos: {
-    nombre: "Sulfitos",
-    icono: "assets/alergenos/sulfitos.svg"
-  },
-  altramuces: {
-    nombre: "Altramuces",
-    icono: "assets/alergenos/altramuces.svg"
-  },
-  moluscos: {
-    nombre: "Moluscos",
-    icono: "assets/alergenos/moluscos.svg"
-  }
+  gluten: { nombre: "Gluten", icono: "assets/alergenos/gluten.svg" },
+  lacteo: { nombre: "Leche", icono: "assets/alergenos/lacteo.svg" },
+  pescado: { nombre: "Pescado", icono: "assets/alergenos/pescado.svg" }
 };
 
 
@@ -101,27 +48,15 @@ function pizzaPerteneceA(pizza, filtro) {
 function crearAlergenos(lista = []) {
   if (!Array.isArray(lista) || !lista.length) return "";
 
-  return lista
-    .map((codigo) => {
-      const alergeno = ALERGENOS[codigo];
-      if (!alergeno) return "";
+  const alergenos = lista.map(codigo => ALERGENOS[codigo]).filter(Boolean);
+  if (!alergenos.length) return "";
 
-      return `
-        <span
-          class="allergen-icon"
-          title="${escapeHTML(alergeno.nombre)}"
-          aria-label="${escapeHTML(alergeno.nombre)}"
-        >
-          <img
-            src="${escapeHTML(alergeno.icono)}"
-            alt=""
-            aria-hidden="true"
-            loading="lazy"
-          >
-        </span>
-      `;
-    })
-    .join("");
+  return `<div class="pizza-allergens" aria-label="Alérgenos: ${escapeHTML(alergenos.map(a => a.nombre).join(', '))}">
+    ${alergenos.map(alergeno => `<span class="allergen-tag" title="Contiene ${escapeHTML(alergeno.nombre.toLowerCase())}">
+      <img src="${escapeHTML(alergeno.icono)}" alt="" aria-hidden="true" loading="lazy" width="22" height="22">
+      <span>${escapeHTML(alergeno.nombre)}</span>
+    </span>`).join("")}
+  </div>`;
 }
 
 
@@ -169,14 +104,8 @@ function crearPizzaCard(pizza, index) {
 
         <p>${ingredientes}.</p>
 
-        <strong class="pizza-price">
-          ${formatoEuro(pizza.precio)}
-        </strong>
-
-        <div
-          class="allergens"
-          aria-label="Alérgenos"
-        >
+        <div class="pizza-card-bottom">
+          <strong class="pizza-price">${formatoEuro(pizza.precio)}</strong>
           ${crearAlergenos(pizza.alergenos)}
         </div>
       </div>
@@ -200,7 +129,7 @@ function renderTabs(categorias = []) {
         type="button"
         class="${index === 0 ? "selected" : ""}"
         data-filter="${escapeHTML(categoria.id)}"
-        aria-selected="${index === 0 ? "true" : "false"}"
+        aria-pressed="${index === 0 ? "true" : "false"}"
       >
         ${escapeHTML(categoria.nombre)}
       </button>
@@ -218,7 +147,7 @@ function renderTabs(categorias = []) {
       tabs.querySelectorAll("button").forEach((item) => {
         const activo = item.dataset.filter === filtroActivo;
         item.classList.toggle("selected", activo);
-        item.setAttribute("aria-selected", String(activo));
+        item.setAttribute("aria-pressed", String(activo));
       });
 
       animarCambioFiltro();
@@ -371,18 +300,35 @@ function inicializarMenuMovil() {
   menuButton.addEventListener("click", () => {
     const abierto = mainNav.classList.toggle("is-open");
 
-    menuButton.setAttribute(
-      "aria-expanded",
-      String(abierto)
-    );
+    menuButton.setAttribute("aria-expanded", String(abierto));
+    menuButton.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
   });
 
   mainNav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       mainNav.classList.remove("is-open");
       menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Abrir menú");
     });
   });
+
+  // Cierra con Escape o al pulsar fuera del menú.
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && mainNav.classList.contains("is-open")) {
+      mainNav.classList.remove("is-open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Abrir menú");
+      menuButton.focus();
+    }
+  });
+  document.addEventListener("click", event => {
+    if (!mainNav.contains(event.target) && !menuButton.contains(event.target)) {
+      mainNav.classList.remove("is-open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Abrir menú");
+    }
+  });
+
 }
 
 

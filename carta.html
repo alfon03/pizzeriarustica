@@ -11,9 +11,8 @@
   >
 
   <title>Carta | Pizzería Rústica Napoletana Style XXL</title>
-    <link rel="icon" type="image/png" href="assets/logorustica.png">
-    <link rel="apple-touch-icon" href="assets/logorustica.png">
   <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -27,9 +26,12 @@
   >
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mejoras.css">
+  <link rel="stylesheet" href="acabados-v42.css">
 </head>
 
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <header class="topbar">
 
@@ -40,6 +42,7 @@
     >
       <img
         class="logo"
+        width="68" height="68"
         src="assets/logorustica.png"
         alt="Pizzería Rústica Napoletana Style XXL"
       >
@@ -65,20 +68,15 @@
       <a href="index.html#contacto">Contacto</a>
     </nav>
 
-    <a
-      class="brush-btn header-location hero-location-btn"
-      href="https://www.google.com/maps/search/?api=1&query=C.%20Marcos%20Orbaneja%2012%2C%2041440%20Lora%20del%20R%C3%ADo%2C%20Sevilla"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Cómo llegar a Pizzería Rústica"
-    >
-      Cómo llegar
+    <a class="brush-btn header-location hero-location-btn header-call" href="tel:+34603678738" aria-label="Llamar a Pizzería Rústica al 603 67 87 38">
+      <svg class="ui-icon btn-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-phone"></use></svg>
+      LLAMAR AHORA
     </a>
 
   </header>
 
 
-  <main class="carta-page">
+  <main class="carta-page" id="contenido">
 
     <section class="carta-hero reveal-on-scroll" aria-labelledby="carta-title">
       <div class="carta-hero-inner">
@@ -90,6 +88,11 @@
         <p>
           Pizzas estilo napolitano XXL, bebidas y postres.
         </p>
+
+        <a class="brush-btn carta-call-primary" href="tel:+34603678738">
+          <svg class="ui-icon btn-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-phone"></use></svg>
+          LLAMAR PARA PEDIR
+        </a>
 
         <a class="carta-back-home" href="index.html#pizzas">
           <svg class="ui-icon btn-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-arrow-left"></use></svg> Volver a la web
@@ -114,8 +117,8 @@
         <div
           id="carta-tabs"
           class="tabs"
-          role="tablist"
-          aria-label="Categorías de pizzas"
+          role="group"
+          aria-label="Filtrar pizzas por categoría"
         >
           <span class="menu-loading">
             Cargando categorías…
@@ -189,35 +192,21 @@
     </section>
 
 
-    <section
-      id="alergenos"
-      class="allergen-info paper reveal-on-scroll"
-      aria-labelledby="allergen-title"
-    >
-
+    <section id="alergenos" class="allergen-info paper reveal-on-scroll" aria-labelledby="allergen-title">
       <div class="allergen-info-copy">
-
-        <span class="script olive">
-          Información
-        </span>
-
-        <h2 id="allergen-title">
-          ALÉRGENOS
-        </h2>
-
-        <p>
-          Consulta los iconos indicados en cada pizza.
-          Si tienes una alergia o intolerancia, consúltanos
-          antes de realizar tu pedido.
-        </p>
-
+        <span class="script olive">Información</span>
+        <h2 id="allergen-title">ALÉRGENOS DE NUESTRAS PIZZAS</h2>
+        <p>Estos símbolos identifican los alérgenos de cada pizza según los ingredientes indicados en la carta.</p>
+        <div id="allergen-legend" class="allergen-legend" aria-label="Leyenda de alérgenos"></div>
+        <p class="allergen-explanation"><strong>Importante:</strong> todas las masas contienen gluten. El queso sin lactosa sigue siendo un derivado de la <strong>leche</strong> y puede causar alergia a las proteínas lácteas. Las pizzas de base crema contienen leche por la nata; las que llevan queso también contienen leche. Las de atún contienen pescado.</p>
+        <p class="allergen-explanation">Las fichas técnicas de salsas, embutidos, postres, bebidas y posibles trazas requieren confirmación. Si tienes alergia o intolerancia, <strong>consúltanos por teléfono antes de pedir</strong>.</p>
       </div>
-
-      <div
-        id="allergen-legend"
-        class="allergen-legend"
-      ></div>
-
+      <div class="allergen-contact">
+        <a class="brush-btn" href="tel:+34603678738">
+          <svg class="ui-icon btn-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-phone"></use></svg>
+          CONSULTAR POR TELÉFONO
+        </a>
+      </div>
     </section>
   </main>
 
@@ -259,7 +248,7 @@
         <a class="social-icon tiktok" href="https://www.tiktok.com/@rusticanapoletana" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Pizzería Rústica" title="TikTok">
           <svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-tiktok"></use></svg>
         </a>
-        <a class="social-icon maps-icon" href="https://www.google.com/maps/search/?api=1&query=C.%20Marcos%20Orbaneja%2012%2C%2041440%20Lora%20del%20R%C3%ADo%2C%20Sevilla" target="_blank" rel="noopener noreferrer" aria-label="Pizzería Rústica en Google Maps" title="Google Maps">
+        <a class="social-icon maps-icon" href="https://www.google.com/maps/search/?api=1&amp;query=Pizzer%C3%ADa%20Rustica%20Napoletana%20Style%20XXL%20Lora%20del%20R%C3%ADo&amp;query_place_id=ChIJ_e6LOQDvEg0RnpeNVBLz2Lw" target="_blank" rel="noopener noreferrer" aria-label="Pizzería Rústica en Google Maps" title="Google Maps">
           <svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-map-pin"></use></svg>
         </a>
         <span class="footer-italy" aria-hidden="true"></span>
@@ -268,9 +257,8 @@
       <div class="footer-links">
         <a href="#pizzas-carta">Carta</a>
         <i>|</i>
-        <a href="#alergenos">Alérgenos</a>
-        <i>|</i>
-        <span>Privacidad</span>
+        <a href="#alergenos">Alergias</a>
+
       </div>
 
     </div>
@@ -283,6 +271,10 @@
   </footer>
 
 
+  <a class="mobile-phone-cta" href="tel:+34603678738" aria-label="Llamar al 603 67 87 38">
+    <svg class="ui-icon btn-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-phone"></use></svg>
+    LLAMAR PARA PEDIR · 603 67 87 38
+  </a>
   <script src="carta.js" defer></script>
 
 </body>

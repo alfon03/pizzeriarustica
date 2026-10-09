@@ -1,0 +1,60 @@
+{
+  "fuente": "Google Maps",
+  "fecha_seleccion": "2026-10",
+  "resenas": [
+    {
+      "autor": "Mimi Mimi",
+      "estrellas": 5,
+      "texto": "Maravillosas pizzas! Masa perfecta , los ingredientes de buena calidad!! Súper recomendable 🍕",
+      "fragmento": false
+    },
+    {
+      "autor": "Noelia Calvente García",
+      "estrellas": 5,
+      "texto": "Pizzería espectacular que te recuerda a las famosas pizzas napolitanas. Los trabajadores son muy profesionales y las dos chicas que te atienden son maravillosas, muy amables.…",
+      "fragmento": true
+    },
+    {
+      "autor": "Antonio Jose Morales",
+      "estrellas": 5,
+      "texto": "Pizzas deliciosas, buen tamaño y el trato muy bueno, tiempo de espera razonable, totalmente recomendable, tienen postres muy ricos",
+      "fragmento": false
+    },
+    {
+      "autor": "Francisco Javier",
+      "estrellas": 5,
+      "texto": "Buenísimas pizzas y una masa muy sabrosa. Pedimos la pizza Margherita y la Cremozza BBQ.…",
+      "fragmento": true
+    },
+    {
+      "autor": "Cristina Vazquez Muñoz",
+      "estrellas": 5,
+      "texto": "Pizzería espectacular, buenísimo trato y buenísimas las pizzas!!! Son los mejores!!! Y trato inmejorable, te hacen sentir como en casa!!!",
+      "fragmento": false
+    },
+    {
+      "autor": "rocio quesada armijo",
+      "estrellas": 5,
+      "texto": "Espectacular las pizzas ,la masa es de 10 ,y el tamaño bastante grandes,para mi la mejor pizzeria del pueblo",
+      "fragmento": false
+    },
+    {
+      "autor": "Macarena Ramírez Trancoso",
+      "estrellas": 5,
+      "texto": "Buena atencion, Masa espectacular , auténtica Napoletana. Ingredientes de máxima calidad. Las mejores pizzas que he probado.",
+      "fragmento": false
+    },
+    {
+      "autor": "Rafael Manuel cuevas López",
+      "estrellas": 5,
+      "texto": "Espectacular! Pizzas diferentes, sabor increíble, servicio a domicilio de 10! Impresionante la textura de su masa y los sabores de calidad de todos sus ingredientes. Chapó!!",
+      "fragmento": false
+    },
+    {
+      "autor": "Laura González",
+      "estrellas": 5,
+      "texto": "Sin duda mi pizzería favorita yo vivo fuera y cuando venga a pasar unos días con la familia no puedo irme sin pedirme mi pizza favorita Especial Andaluza con extra de champiñón,peperoni y salsa Andaluza 🤤🤤…",
+      "fragmento": true
+    }
+  ]
+}

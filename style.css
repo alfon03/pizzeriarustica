@@ -10320,3 +10320,25 @@ footer > small {
     font-size: 9px;
   }
 }
+
+/* =========================================================
+   RÚSTICA V2.1 — MEJORAS PUNTUALES, DISEÑO ORIGINAL INTACTO
+   ========================================================= */
+.header-call { gap: 8px; white-space: nowrap; }
+.header-call .ui-icon { width: 15px; height: 15px; }
+.hero-cta .btn-icon, .carta-call-primary .btn-icon { width: 16px; height: 16px; }
+.contact-call { grid-column: 2; display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-width: 160px; min-height: 44px; padding: 0 14px; font-size: 10px; margin: 12px 0 3px; background: url("assets/brush-orange-hero.png") center/100% 100% no-repeat; color: #fff; }
+.contact-call .ui-icon, .allergen-contact .ui-icon { width: 15px; height: 15px; }
+.contact .contact-whatsapp { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; margin-top: 8px; }
+.carta-call-primary { margin: 20px auto 6px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 205px; height: 50px; background: url("assets/brush-orange-hero.png") center/100% 100% no-repeat; color: white; font-size: 10px; }
+.allergen-contact { display: flex; align-items: center; justify-content: center; }
+.allergen-contact .brush-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 14px 20px; color: white; background: url("assets/brush-orange-wide.png") center/100% 100% no-repeat; font-size: 10px; min-height: 46px; }
+.review-information { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+.review-information small a { text-decoration: underline; text-underline-offset: 3px; }
+.mobile-phone-cta { display: none; }
+@media (max-width: 800px) {
+  .mobile-phone-cta { position: fixed; left: 12px; right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); z-index: 999; min-height: 48px; padding: 10px 15px; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: 9px; color: #fff; background: var(--orange); box-shadow: 0 5px 16px rgba(0,0,0,.26); font-size: 11px; font-weight: 700; letter-spacing: .03em; }
+  .mobile-phone-cta .ui-icon { width: 18px; height: 18px; }
+  body { padding-bottom: 72px; }
+}
+@media (prefers-reduced-motion: reduce) { .mobile-phone-cta { transition: none; } }
