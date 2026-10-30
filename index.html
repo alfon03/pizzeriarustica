@@ -36,6 +36,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="mejoras.css">
   <link rel="stylesheet" href="acabados-v42.css">
+  <link rel="stylesheet" href="novedades-rustica.css">
+  <link rel="stylesheet" href="rustica-ajustes-responsive.css">
 </head>
 
 <body>
@@ -67,6 +69,7 @@
 
     <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
       <a class="active" href="#inicio">Inicio</a>
+      <a href="#novedades">Novedades</a>
       <a href="#pizzas">Pizzas</a>
       <a href="carta.html">Carta</a>
 
@@ -127,6 +130,39 @@
 
 
     <!-- =====================================================
+         NOVEDADES — DESDE carta.json (MISMA FUENTE QUE LA CARTA)
+    ====================================================== -->
+    <section id="novedades" class="novedades-rustica paper" aria-labelledby="novedades-title">
+      <div class="novedades-rustica-inner">
+        <div class="novedades-head">
+          <div>
+            <span class="script olive">Recién llegadas</span>
+            <h2 id="novedades-title">NOVEDADES</h2>
+            <p>Dos combinaciones con mucho carácter. Descubre nuestras últimas pizzas.</p>
+          </div>
+          <div class="novedades-note" aria-hidden="true">
+            <span>RÚSTICA</span>
+            <strong>Para probar algo nuevo</strong>
+          </div>
+        </div>
+        <div id="novedades-grid" class="novedades-grid" aria-live="polite" aria-busy="true">
+          <p class="menu-loading">Cargando novedades…</p>
+        </div>
+        <div class="novedades-actions">
+          <a class="rustica-cta rustica-cta--primary" href="carta.html?categoria=novedades#pizzas-carta">
+            <span>VER NOVEDADES EN LA CARTA</span>
+            <svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-arrow-right"></use></svg>
+          </a>
+          <a class="rustica-cta rustica-cta--secondary" href="documentos/Carta_Novedades_Rustica_A5.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ver carta de novedades en PDF (abre otra pestaña)">
+            <svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-file-text"></use></svg>
+            <span>VER NOVEDADES EN PDF</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
          PIZZAS — CARGADAS DESDE carta.json
     ====================================================== -->
     <section id="pizzas" class="pizzas paper" aria-labelledby="pizzas-title">
@@ -158,8 +194,6 @@
           Cargando carta…
         </p>
       </div>
-
-      <p class="home-allergen-note">La masa contiene <strong>gluten</strong> y nuestras pizzas con queso contienen <strong>leche</strong>, incluso si el queso es sin lactosa. Las pizzas con atún contienen <strong>pescado</strong>. <a href="carta.html#alergenos">Consulta los alérgenos</a>.</p>
 
       <a class="brush-btn center-btn" href="carta.html">
         VER TODAS LAS PIZZAS
@@ -247,9 +281,9 @@
 
       <div class="local-photos">
 
-        <img src="assets/local-01.jpg" alt="Ambiente de inspiración rústica; imagen ilustrativa" loading="lazy" decoding="async" width="208" height="147">
-        <img src="assets/local-02-horno.jpg" alt="Horno de leña en una ambientación ilustrativa" loading="lazy" decoding="async" width="165" height="147">
-        <img src="assets/local-03.jpg" alt="Zona de mesas de estilo rústico; imagen ilustrativa" loading="lazy" decoding="async" width="168" height="147">
+        <img src="assets/logorustica.png" alt="Ambiente de inspiración rústica; imagen ilustrativa" loading="lazy" decoding="async" width="208" height="147">
+        <img src="assets/logorustica.png" alt="Horno de leña en una ambientación ilustrativa" loading="lazy" decoding="async" width="165" height="147">
+        <img src="assets/logorustica.png" alt="Zona de mesas de estilo rústico; imagen ilustrativa" loading="lazy" decoding="async" width="168" height="147">
 
       </div>
 
@@ -521,6 +555,8 @@
 
       <div class="footer-links">
         <a href="carta.html">Carta</a>
+        <i>|</i>
+        <a href="#novedades">Novedades</a>
         <i>|</i>
         <a href="carta.html#alergenos">Alergias</a>
 

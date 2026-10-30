@@ -241,6 +241,29 @@ function renderPizzasHome() {
 
 
 /* =========================================================
+   NOVEDADES EN PORTADA — MISMO carta.json
+   ========================================================= */
+function renderNovedades() {
+  const contenedor = document.querySelector('#novedades-grid');
+  if (!contenedor || !cartaData) return;
+
+  const novedades = cartaData.pizzas.filter(pizza => pizza.categoria === 'novedades');
+  contenedor.innerHTML = novedades.length ? novedades.map(pizza => {
+    const ingredientes = Array.isArray(pizza.ingredientes)
+      ? pizza.ingredientes.map(escapeHTML).join(', ')
+      : '';
+    return `<article class="novedad-card">
+      <div class="novedad-card-top"><span class="novedad-label">NUEVA EN RÚSTICA</span><strong class="novedad-price">${formatoEuro(pizza.precio)}</strong></div>
+      <h3>${escapeHTML(pizza.nombre)}</h3>
+      <p>${ingredientes}.</p>
+      ${crearAlergenos(pizza.alergenos)}
+    </article>`;
+  }).join('') : '<p class="menu-empty">Próximamente tendremos nuevas sugerencias.</p>';
+  contenedor.setAttribute('aria-busy', 'false');
+}
+
+
+/* =========================================================
    CARGAR JSON
    ========================================================= */
 
@@ -268,6 +291,7 @@ async function cargarCarta() {
 
     renderTabs(data.categorias || []);
     renderPizzasHome();
+    renderNovedades();
   } catch (error) {
     console.error("Error cargando carta.json:", error);
 
@@ -278,6 +302,11 @@ async function cargarCarta() {
           No se ha podido cargar la carta.
         </p>
       `;
+    }
+    const novedadesGrid = document.querySelector('#novedades-grid');
+    if (novedadesGrid) {
+      novedadesGrid.setAttribute('aria-busy', 'false');
+      novedadesGrid.innerHTML = '<p class="menu-load-error">Ahora mismo no podemos mostrar las novedades. Llámanos para consultarlas.</p>';
     }
   }
 }

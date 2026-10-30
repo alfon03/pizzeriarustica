@@ -127,9 +127,9 @@ function renderTabs(categorias = []) {
     .map((categoria, index) => `
       <button
         type="button"
-        class="${index === 0 ? "selected" : ""}"
+        class="${categoria.id === filtroActivo ? "selected" : ""}"
         data-filter="${escapeHTML(categoria.id)}"
-        aria-pressed="${index === 0 ? "true" : "false"}"
+        aria-pressed="${categoria.id === filtroActivo ? "true" : "false"}"
       >
         ${escapeHTML(categoria.nombre)}
       </button>
@@ -380,6 +380,10 @@ async function cargarCartaCompleta() {
 
     cartaData = await response.json();
 
+    // Permite abrir una categoría desde un enlace externo o desde la portada.
+    const categoriaSolicitada = new URLSearchParams(window.location.search).get('categoria');
+    const disponibles = new Set((cartaData.categorias || []).map(item => item.id));
+    filtroActivo = categoriaSolicitada && disponibles.has(categoriaSolicitada) ? categoriaSolicitada : 'all';
     renderTabs(cartaData.categorias || []);
     renderPizzas();
     renderBebidas();

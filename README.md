@@ -4,7 +4,7 @@ Esta versión conserva los fondos, pinceladas, hojas decorativas, logotipo, tipo
 
 ## Mejoras
 - Diseño pulido en ordenadores, tablets y móviles: botones y filtros más cómodos, tipografía legible, tarjetas mejor espaciadas y llamada fija en móvil.
-- Carta de 17 pizzas con filtros `Todas`, `Tradicionales`, `Base crema`, `Especiales`. No existe categoría `Vegetarianas` (sí la pizza **Vegetariana**).
+- Carta de 19 pizzas con filtros `Todas`, `Tradicionales`, `Base crema`, `Especiales`, `Novedades`. No existe categoría `Vegetarianas` (sí la pizza **Vegetariana**).
 - **No se utilizan fotografías de las pizzas individuales de ejemplo**: sus campos `imagen` siguen en `null`, mostrando el logo de marca hasta que se incorporen fotos reales.
 - Se conservan las imágenes originales no asociadas a pizzas de ejemplo. La galería muestra las imágenes de ambiente incluidas en el proyecto, identificadas como **ilustrativas** (no se afirma que sean fotos reales del local).
 - Llamada al **603 67 87 38** como opción principal, WhatsApp como alternativa.
@@ -50,3 +50,11 @@ Los productos, ingredientes, precios, dirección y horario no se han modificado.
 - Comprobación automatizada de los tamaños **320, 360, 390, 768, 1024 y 1440 px**: sin desbordamiento horizontal; filtros, menú, reseñas y enlaces telefónicos revisados en navegador de pruebas con recursos locales simulados. Recomendable una última comprobación en la web publicada para verificar también iconos SVG y fuentes externas.
 
 **Pendiente antes de publicar:** confirmar horarios de cierre y fichas técnicas de ingredientes, alérgenos de postres y bebidas y posibles trazas. No presentar esta información como certificada hasta verificarla.
+
+
+## V5 · Nueva categoría Novedades y paquete unificado (octubre de 2026)
+- Se añadieron **Pulled BBQ** y **Full Cheese**, ambas a 13 €, a `carta.json` como nueva categoría `novedades`.
+- La portada incorpora una sección Novedades y la carta completa añade un filtro del mismo nombre.
+- Se han conservado la estética y los recursos originales y eliminado los JPG individuales de pizzas que eran solo de ejemplo.
+- Hay PDF A5 públicos en `documentos/` y Word editables por separado en el paquete unificado.
+- Para detalles y publicación leer `README-ACTUALIZACIONES.md` y `LEEME_PRIMERO.txt` del paquete.

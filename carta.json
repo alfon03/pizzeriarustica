@@ -12,6 +12,10 @@
     {
       "id": "especiales",
       "nombre": "Especiales"
+    },
+    {
+      "id": "novedades",
+      "nombre": "Novedades"
     }
   ],
   "pizzas": [
@@ -26,9 +30,8 @@
         "mozzarella"
       ],
       "alergenos": [
-        "gluten",
-        "lacteo"
-      ],
+        "gluten"
+             ],
       "imagen": null,
       "destacada": true
     },
@@ -45,9 +48,8 @@
         "3 quesos"
       ],
       "alergenos": [
-        "gluten",
-        "lacteo"
-      ],
+        "gluten"
+             ],
       "imagen": null,
       "destacada": true
     },
@@ -63,9 +65,8 @@
         "pepperoni"
       ],
       "alergenos": [
-        "gluten",
-        "lacteo"
-      ],
+        "gluten"
+             ],
       "imagen": null,
       "destacada": true
     },
@@ -81,9 +82,8 @@
         "jamón york"
       ],
       "alergenos": [
-        "gluten",
-        "lacteo"
-      ],
+        "gluten"
+             ],
       "imagen": null,
       "destacada": false
     },
@@ -100,9 +100,8 @@
         "champiñones"
       ],
       "alergenos": [
-        "gluten",
-        "lacteo"
-      ],
+        "gluten"
+             ],
       "imagen": null,
       "destacada": true
     },
@@ -120,7 +119,6 @@
       ],
       "alergenos": [
         "gluten",
-        "lacteo",
         "pescado"
       ],
       "imagen": null,
@@ -139,9 +137,8 @@
         "champiñones"
       ],
       "alergenos": [
-        "gluten",
-        "lacteo"
-      ],
+        "gluten"
+             ],
       "imagen": null,
       "destacada": false
     },
@@ -160,7 +157,6 @@
       ],
       "alergenos": [
         "gluten",
-        "lacteo",
         "pescado"
       ],
       "imagen": null,
@@ -179,7 +175,6 @@
       ],
       "alergenos": [
         "gluten",
-        "lacteo",
         "pescado"
       ],
       "imagen": null,
@@ -197,8 +192,7 @@
         "bacón"
       ],
       "alergenos": [
-        "gluten",
-        "lacteo"
+        "gluten"
       ],
       "imagen": null,
       "destacada": false
@@ -275,9 +269,8 @@
         "salsa de la casa"
       ],
       "alergenos": [
-        "gluten",
-        "lacteo"
-      ],
+        "gluten"
+             ],
       "imagen": null,
       "destacada": false
     },
@@ -296,9 +289,8 @@
         "pepperoni"
       ],
       "alergenos": [
-        "gluten",
-        "lacteo"
-      ],
+        "gluten"
+             ],
       "imagen": null,
       "destacada": false
     },
@@ -316,9 +308,8 @@
         "champiñones"
       ],
       "alergenos": [
-        "gluten",
-        "lacteo"
-      ],
+        "gluten"
+             ],
       "imagen": null,
       "destacada": false
     },
@@ -337,11 +328,54 @@
         "aceitunas negras"
       ],
       "alergenos": [
-        "gluten",
-        "lacteo"
-      ],
+        "gluten"
+             ],
       "imagen": null,
       "destacada": true
+    },
+    {
+      "id": 18,
+      "nombre": "Pulled BBQ",
+      "categoria": "novedades",
+      "etiquetas": [
+        "nueva"
+      ],
+      "precio": 13,
+      "ingredientes": [
+        "Tomate",
+        "mozzarella",
+        "bacón",
+        "cebolla",
+        "champiñones",
+        "carne deshilachada BBQ"
+      ],
+      "alergenos": [
+        "gluten"
+             ],
+      "imagen": null,
+      "destacada": false
+    },
+    {
+      "id": 19,
+      "nombre": "Full Cheese",
+      "categoria": "novedades",
+      "etiquetas": [
+        "nueva"
+      ],
+      "precio": 13,
+      "ingredientes": [
+        "Tomate",
+        "mozzarella",
+        "3 quesos",
+        "roquefort",
+        "queso de cabra",
+        "salsa cheddar"
+      ],
+      "alergenos": [
+        "gluten"
+             ],
+      "imagen": null,
+      "destacada": false
     }
   ],
   "bebidas": [
@@ -404,5 +438,6 @@
     "instagram": "rusticanapoletanastylexxl",
     "facebook": "rusticanapoletanastylexxl",
     "tiktok": "rusticanapoletana"
-  }
+  },
+  "_notaNovedades": "Novedades actualizables desde carta.json. Datos de Pulled BBQ y Full Cheese tomados de la carta de sugerencias aportada. Verificar alérgenos adicionales de salsa BBQ, carne preparada, mezcla de quesos y salsa cheddar antes de considerarlos exhaustivos."
 }

@@ -28,6 +28,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="mejoras.css">
   <link rel="stylesheet" href="acabados-v42.css">
+  <link rel="stylesheet" href="novedades-rustica.css">
+  <link rel="stylesheet" href="rustica-ajustes-responsive.css">
 </head>
 
 <body>
@@ -64,6 +66,7 @@
       aria-label="Navegación principal"
     >
       <a href="index.html#inicio">Inicio</a>
+      <a href="index.html#novedades">Novedades</a>
       <a class="active" href="#pizzas-carta">Carta</a>
       <a href="index.html#contacto">Contacto</a>
     </nav>
@@ -89,10 +92,16 @@
           Pizzas estilo napolitano XXL, bebidas y postres.
         </p>
 
-        <a class="brush-btn carta-call-primary" href="tel:+34603678738">
-          <svg class="ui-icon btn-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-phone"></use></svg>
-          LLAMAR PARA PEDIR
-        </a>
+        <div class="carta-hero-actions">
+          <a class="brush-btn carta-call-primary" href="tel:+34603678738">
+            <svg class="ui-icon btn-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-phone"></use></svg>
+            LLAMAR PARA PEDIR
+          </a>
+          <a class="rustica-cta rustica-cta--pdf-dark" href="documentos/Carta_Rustica_Completa_A5.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ver carta completa en PDF (abre otra pestaña)">
+            <svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-file-text"></use></svg>
+            <span>VER CARTA COMPLETA EN PDF</span>
+          </a>
+        </div>
 
         <a class="carta-back-home" href="index.html#pizzas">
           <svg class="ui-icon btn-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-arrow-left"></use></svg> Volver a la web
@@ -198,9 +207,6 @@
         <h2 id="allergen-title">ALÉRGENOS DE NUESTRAS PIZZAS</h2>
         <p>Estos símbolos identifican los alérgenos de cada pizza según los ingredientes indicados en la carta.</p>
         <div id="allergen-legend" class="allergen-legend" aria-label="Leyenda de alérgenos"></div>
-        <p class="allergen-explanation"><strong>Importante:</strong> todas las masas contienen gluten. El queso sin lactosa sigue siendo un derivado de la <strong>leche</strong> y puede causar alergia a las proteínas lácteas. Las pizzas de base crema contienen leche por la nata; las que llevan queso también contienen leche. Las de atún contienen pescado.</p>
-        <p class="allergen-explanation">Las fichas técnicas de salsas, embutidos, postres, bebidas y posibles trazas requieren confirmación. Si tienes alergia o intolerancia, <strong>consúltanos por teléfono antes de pedir</strong>.</p>
-      </div>
       <div class="allergen-contact">
         <a class="brush-btn" href="tel:+34603678738">
           <svg class="ui-icon btn-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-phone"></use></svg>
