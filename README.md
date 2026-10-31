@@ -1,60 +1,61 @@
-# Pizzería Rústica — Diseño original mejorado V4.2
+# Pizzería Rústica — web unificada lista para GitHub Pages
 
-Esta versión conserva los fondos, pinceladas, hojas decorativas, logotipo, tipografías e imagen principal originales. Los ajustes están en `mejoras.css` y en `acabados-v42.css`, cargados después de `style.css`.
+Esta carpeta es la **raíz de publicación** de la web de Rústica. Contiene solo los archivos necesarios para publicar la página, más estas instrucciones. El ZIP original aportado por el propietario **no se modifica**.
 
-## Mejoras
-- Diseño pulido en ordenadores, tablets y móviles: botones y filtros más cómodos, tipografía legible, tarjetas mejor espaciadas y llamada fija en móvil.
-- Carta de 19 pizzas con filtros `Todas`, `Tradicionales`, `Base crema`, `Especiales`, `Novedades`. No existe categoría `Vegetarianas` (sí la pizza **Vegetariana**).
-- **No se utilizan fotografías de las pizzas individuales de ejemplo**: sus campos `imagen` siguen en `null`, mostrando el logo de marca hasta que se incorporen fotos reales.
-- Se conservan las imágenes originales no asociadas a pizzas de ejemplo. La galería muestra las imágenes de ambiente incluidas en el proyecto, identificadas como **ilustrativas** (no se afirma que sean fotos reales del local).
-- Llamada al **603 67 87 38** como opción principal, WhatsApp como alternativa.
-- Mejoras de teclado, foco visible, botón para saltar al contenido y reducción de animaciones según preferencia del usuario.
-- La carta muestra alérgenos por pizza con etiquetas e iconos: gluten, leche y pescado (solo si lleva atún). Leyenda y aviso explicativo al final de la carta.
+## Publicación en GitHub Pages
 
-## IMPORTANTE: verificación antes de publicar la información de alérgenos
-- **Gluten:** todas las pizzas según la receta comunicada.
-- **Leche:** el **queso sin lactosa sigue conteniendo proteínas de leche** y *sí* se debe marcar como alérgeno leche. Se marca leche en todas las pizzas con queso, incluyendo las de tomate, y en las de base crema por la nata. Eliminar leche de las pizzas con queso sería engañoso/peligroso para personas alérgicas.
-- **Pescado:** se marca en las tres pizzas con atún.
-- **Falta confirmación** de fichas técnicas de masas, quesos, ingredientes y salsas, posibles trazas/contacto cruzado, y alérgenos de **postres y bebidas** (que pueden incluir frutos secos, huevo, etc.). No asumir que el restaurante entero tiene solo tres tipos de alérgenos. Antes de publicar información definitiva, consultar a la persona responsable de seguridad alimentaria.
-- La etiqueta «sin lactosa» no puede extenderse a todos los quesos de la carta sin verificar roquefort, otros quesos, queso de cabra, nata, embutidos y salsas.
+- Repositorio actual: `https://github.com/alfon03/pizzeriarustica`
+- Dominio personalizado: `rusticanapoletanastylexxl.es`
+- **Conservar `CNAME`** en la raíz del repositorio: GitHub Pages lo necesita para el dominio propio.
+- Las páginas `index.html` y `carta.html` deben estar en la raíz que sirve GitHub Pages (no dentro de una carpeta `Pizzeria/`).
+- **No sustituir ni borrar la carpeta `.git` del ordenador**. Copiar los archivos y carpetas de este ZIP al repositorio, actualizar los existentes y eliminar los ficheros obsoletos enumerados abajo.
+- No usar `git push --force` para resolver conflictos de sincronización.
 
-## Uso
-Abrir con servidor local (por ejemplo Live Server de VS Code o `python -m http.server 8000` dentro de la carpeta), ya que las páginas cargan `carta.json` con `fetch`.
+## Estructura limpia
 
-Las fotos reales se podrán incorporar cambiando `"imagen": null` en `carta.json` por la ruta `"assets/foto-real.jpg"`.
+- `index.html` — página principal.
+- `carta.html` — carta online con filtros.
+- `style.css` — **todos los estilos unificados**, incluidos responsive, novedades y corrección de «Nuestra masa».
+- `script.js`, `carta.js`, `resenas.js` — comportamiento de la web.
+- `carta.json`, `resenas.json` — datos editables; pizzas, precios y reseñas.
+- `assets/` — solo imágenes e iconos referenciados realmente en la web.
+- `documentos/Carta_Rustica_Completa_A5.pdf` — carta completa en PDF (2 páginas A5).
+- `documentos/Carta_Novedades_Rustica_A5.pdf` — PDF correcto de Novedades (1 página A5, logo mejorado).
+- `CNAME` — configuración del dominio personalizado.
+- `favicon*`, `apple-touch-icon.png` — iconos de navegador / móvil.
 
-Los productos, ingredientes, precios, dirección y horario no se han modificado. Los enlaces de contacto y redes se mantienen.
+## Qué se ha eliminado respecto al ZIP recibido
 
+- Las cinco hojas CSS separadas `mejoras.css`, `acabados-v42.css`, `novedades-rustica.css`, `rustica-ajustes-responsive.css` y `rustica_correccion_pasion_movil.css`: su contenido **ya está integrado en `style.css`** en el mismo orden.
+- `app.js`, que ninguna página utilizaba; `script.js` y `carta.js` se conservan.
+- Cinco fotos de pizzas de demostración que no aparecían en pantalla (las 19 pizzas usan `imagen: null`).
+- Iconos SVG de alérgenos no utilizados: se conservan gluten, leche y pescado.
+- `favicon-source.png` (archivo de trabajo, no usado por el navegador).
+- El README antiguo y el historial `.git` del ZIP original **no se incluyen** en este paquete de publicación. La carpeta `.git` de tu repositorio local debe conservarse.
 
-## V4 · reseñas, adaptación y SEO
-- Se mantiene el diseño original y sus imágenes; solo se han añadido reglas en `mejoras.css`.
-- Las **9 reseñas** del fichero `resenas.json` se han seleccionado de la relación proporcionada por el propietario (octubre de 2026). Algunos textos son extractos, identificados como tales. Los nombres se muestran tal y como aparecían en Google.
-- La sección rota las opiniones automáticamente cada 6,5 segundos (3 en escritorio, 2 en tablet, 1 en móvil), con controles de anterior, siguiente y pausa. Se detiene en hover/foco, pestaña oculta y para quien active «reducir movimiento».
-- **No es una sincronización automática con Google**: para actualizar la selección edita `resenas.json`. Sin JavaScript o si falla la carga se ven las primeras 3 reseñas en HTML.
-- Link exacto a la ficha del negocio para leer todas las reseñas: https://www.google.com/maps/search/?api=1&query=Pizzer%C3%ADa%20Rustica%20Napoletana%20Style%20XXL%20Lora%20del%20R%C3%ADo&query_place_id=ChIJ_e6LOQDvEg0RnpeNVBLz2Lw
-- Link directo para escribir una reseña (verificar en dispositivo real si abre correctamente la ficha): https://search.google.com/local/writereview?placeid=ChIJ_e6LOQDvEg0RnpeNVBLz2Lw
-- Se añadió SEO local `Restaurant` con nombre, teléfono, dirección y mapa, sin valoración agregada artificial ni horarios supuestos.
-- El horario del HTML se conserva de la versión anterior sin modificar; compruébalo con el negocio porque hay divergencias entre fuentes externas y lo indicado en el sitio.
+## Aplicar estos cambios a tu carpeta existente en Windows
 
+1. Haz una copia de seguridad de `C:\Users\alfon\Desktop\Pizzeria`.
+2. Descomprime este ZIP en otra carpeta y copia su **contenido**, no la carpeta que lo contiene, a la carpeta `Pizzeria` del escritorio. Mantén la carpeta `.git` sin tocar.
+3. Elimina de tu carpeta `Pizzeria` solo los ficheros antiguos que se enumeran en «Qué se ha eliminado» (si siguen allí). La carpeta `assets/alergenos/` debe conservar sus 3 iconos actuales y puedes borrar el resto de SVG no usados.
+4. En PowerShell dentro de `Pizzeria`:
 
-## V4.1 · favicon transparente
-- `favicon.ico`, los PNG de 16/32/512 px y el icono de inicio de iPhone se regeneraron a partir del logo original **sin fondo rectangular**.
-- En navegadores que recuerdan el icono antiguo, vacía la caché o abre en modo privado.
+   ```powershell
+   git status
+   git add -A
+   git commit -m "Unificar web Rustica y corregir PDFs y movil"
+   git fetch origin
+   git status
+   ```
 
-## V4.2 · detalles finales de interfaz
-- Nuevo archivo `acabados-v42.css`: pulido de tarjetas, mejora de separación, enfoque por teclado, botones táctiles y botón fijo para llamadas con espacio para las barras de navegación del móvil.
-- Ajustes para móviles pequeños (320–390 px), tablets y escritorio; se mantiene la identidad visual, todos los elementos decorativos y el favicon transparente.
-- Las reseñas **solo rotan automáticamente si la sección está visible** y continúan deteniéndose al interactuar, cambiar de pestaña o activar movimiento reducido.
-- Menú móvil: el botón recupera correctamente el texto accesible «Abrir menú» al cerrar desde un enlace.
-- Limpieza menor de HTML y del enlace del mapa dentro de los datos estructurados.
-- Comprobación automatizada de los tamaños **320, 360, 390, 768, 1024 y 1440 px**: sin desbordamiento horizontal; filtros, menú, reseñas y enlaces telefónicos revisados en navegador de pruebas con recursos locales simulados. Recomendable una última comprobación en la web publicada para verificar también iconos SVG y fuentes externas.
+   Si Git indica que tu rama también está por detrás del remoto, primero resuelve la sincronización sin sobrescribir tu versión. Si no lo está: `git push origin main`.
 
-**Pendiente antes de publicar:** confirmar horarios de cierre y fichas técnicas de ingredientes, alérgenos de postres y bebidas y posibles trazas. No presentar esta información como certificada hasta verificarla.
+## Edición y pruebas
 
+- Para actualizar pizzas y precios: editar `carta.json` (19 pizzas, incluidas Pulled BBQ y Full Cheese, ambas a 13 €).
+- Para incorporar fotos reales: cambiar `imagen: null` por una ruta real en `assets/`.
+- Para actualizar las reseñas seleccionadas: editar `resenas.json`. No se sincronizan automáticamente con Google.
+- Para visualizar localmente, abrir terminal en esta carpeta y ejecutar `python -m http.server 8000`; navegar a `http://localhost:8000`. No usar `file://` porque la web carga JSON con `fetch`.
+- La información sobre alérgenos requiere validación con las fichas técnicas y posibles trazas antes de considerarse definitiva. Un queso sin lactosa **sigue conteniendo el alérgeno leche**.
 
-## V5 · Nueva categoría Novedades y paquete unificado (octubre de 2026)
-- Se añadieron **Pulled BBQ** y **Full Cheese**, ambas a 13 €, a `carta.json` como nueva categoría `novedades`.
-- La portada incorpora una sección Novedades y la carta completa añade un filtro del mismo nombre.
-- Se han conservado la estética y los recursos originales y eliminado los JPG individuales de pizzas que eran solo de ejemplo.
-- Hay PDF A5 públicos en `documentos/` y Word editables por separado en el paquete unificado.
-- Para detalles y publicación leer `README-ACTUALIZACIONES.md` y `LEEME_PRIMERO.txt` del paquete.
+**Nota:** No se ha cambiado el texto de la web ni los precios respecto al ZIP aportado. Se ha corregido el PDF de Novedades duplicado y la disposición de la sección de masa en móvil.

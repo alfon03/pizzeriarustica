@@ -48,7 +48,9 @@
         "3 quesos"
       ],
       "alergenos": [
-        "gluten"
+        "gluten",
+        "lacteo"
+
              ],
       "imagen": null,
       "destacada": true
@@ -372,7 +374,8 @@
         "salsa cheddar"
       ],
       "alergenos": [
-        "gluten"
+        "gluten",
+        "lacteo"
              ],
       "imagen": null,
       "destacada": false
