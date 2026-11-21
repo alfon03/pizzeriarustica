@@ -4,6 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#18240f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Rústica">
+  <link rel="manifest" href="manifest.webmanifest">
 
   <meta
     name="description"
@@ -12,10 +16,10 @@
 
   <title>Carta | Pizzería Rústica Napoletana Style XXL</title>
   <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/favicon-512.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +29,7 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
@@ -42,7 +46,7 @@
       <img
         class="logo"
         width="68" height="68"
-        src="assets/logorustica.png"
+        src="assets/images/logorustica.png"
         alt="Pizzería Rústica Napoletana Style XXL"
       >
     </a>
@@ -54,7 +58,7 @@
       aria-expanded="false"
       aria-controls="main-nav"
     >
-      <svg class="ui-icon menu-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-menu"></use></svg>
+      <svg class="ui-icon menu-icon" aria-hidden="true" focusable="false"><use href="assets/icons/ui-icons.svg#icon-menu"></use></svg>
     </button>
 
     <nav
@@ -69,7 +73,7 @@
     </nav>
 
     <a class="brush-btn header-location hero-location-btn header-call" href="tel:+34603678738" aria-label="Llamar a Pizzería Rústica al 603 67 87 38">
-      <svg class="ui-icon btn-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-phone"></use></svg>
+      <svg class="ui-icon btn-icon" aria-hidden="true" focusable="false"><use href="assets/icons/ui-icons.svg#icon-phone"></use></svg>
       LLAMAR AHORA
     </a>
 
@@ -91,17 +95,17 @@
 
         <div class="carta-hero-actions">
           <a class="brush-btn carta-call-primary" href="tel:+34603678738">
-            <svg class="ui-icon btn-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-phone"></use></svg>
+            <svg class="ui-icon btn-icon" aria-hidden="true" focusable="false"><use href="assets/icons/ui-icons.svg#icon-phone"></use></svg>
             LLAMAR PARA PEDIR
           </a>
           <a class="rustica-cta rustica-cta--pdf-dark" href="documentos/Carta_Rustica_Completa_A5.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ver carta completa en PDF (abre otra pestaña)">
-            <svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-file-text"></use></svg>
+            <svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/icons/ui-icons.svg#icon-file-text"></use></svg>
             <span>VER CARTA COMPLETA EN PDF</span>
           </a>
         </div>
 
         <a class="carta-back-home" href="index.html#pizzas">
-          <svg class="ui-icon btn-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-arrow-left"></use></svg> Volver a la web
+          <svg class="ui-icon btn-icon" aria-hidden="true" focusable="false"><use href="assets/icons/ui-icons.svg#icon-arrow-left"></use></svg> Volver a la web
         </a>
       </div>
     </section>
@@ -156,7 +160,7 @@
       <article class="carta-list-card">
 
         <div class="carta-list-heading">
-          <span class="carta-section-icon" aria-hidden="true"><svg class="ui-icon"><use href="assets/ui-icons.svg#icon-cup"></use></svg></span>
+          <span class="carta-section-icon" aria-hidden="true"><svg class="ui-icon"><use href="assets/icons/ui-icons.svg#icon-cup"></use></svg></span>
           <span class="script">Nuestras</span>
           <h2>BEBIDAS</h2>
         </div>
@@ -172,7 +176,7 @@
       <article class="carta-list-card">
 
         <div class="carta-list-heading">
-          <span class="carta-section-icon" aria-hidden="true"><svg class="ui-icon"><use href="assets/ui-icons.svg#icon-cake"></use></svg></span>
+          <span class="carta-section-icon" aria-hidden="true"><svg class="ui-icon"><use href="assets/icons/ui-icons.svg#icon-cake"></use></svg></span>
           <span class="script">Algo dulce</span>
           <h2>POSTRES</h2>
         </div>
@@ -206,7 +210,7 @@
         <div id="allergen-legend" class="allergen-legend" aria-label="Leyenda de alérgenos"></div>
       <div class="allergen-contact">
         <a class="brush-btn" href="tel:+34603678738">
-          <svg class="ui-icon btn-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-phone"></use></svg>
+          <svg class="ui-icon btn-icon" aria-hidden="true" focusable="false"><use href="assets/icons/ui-icons.svg#icon-phone"></use></svg>
           CONSULTAR POR TELÉFONO
         </a>
       </div>
@@ -219,7 +223,7 @@
     <div class="footer-brand">
       <a href="index.html#inicio" aria-label="Volver al inicio">
         <img
-          src="assets/logorustica.png"
+          src="assets/images/logorustica.png"
           alt="Rústica Napoletana Style XXL"
         >
       </a>
@@ -243,16 +247,16 @@
 
       <div class="footer-social" aria-label="Redes sociales">
         <a class="social-icon instagram" href="https://www.instagram.com/rusticanapoletanastylexxl/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Pizzería Rústica" title="Instagram">
-          <svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-instagram"></use></svg>
+          <svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/icons/ui-icons.svg#icon-instagram"></use></svg>
         </a>
         <a class="social-icon facebook" href="https://www.facebook.com/profile.php?id=61574863953987&mibextid=wwXIfr&rdid=zs8juwAtOFa4R2EN&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CR8Ay4qjy%2F%3Fmibextid%3DwwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Pizzería Rústica" title="Facebook">
-          <svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-facebook"></use></svg>
+          <svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/icons/ui-icons.svg#icon-facebook"></use></svg>
         </a>
         <a class="social-icon tiktok" href="https://www.tiktok.com/@rusticanapoletana" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Pizzería Rústica" title="TikTok">
-          <svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-tiktok"></use></svg>
+          <svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/icons/ui-icons.svg#icon-tiktok"></use></svg>
         </a>
         <a class="social-icon maps-icon" href="https://www.google.com/maps/search/?api=1&amp;query=Pizzer%C3%ADa%20Rustica%20Napoletana%20Style%20XXL%20Lora%20del%20R%C3%ADo&amp;query_place_id=ChIJ_e6LOQDvEg0RnpeNVBLz2Lw" target="_blank" rel="noopener noreferrer" aria-label="Pizzería Rústica en Google Maps" title="Google Maps">
-          <svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-map-pin"></use></svg>
+          <svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/icons/ui-icons.svg#icon-map-pin"></use></svg>
         </a>
         <span class="footer-italy" aria-hidden="true"></span>
       </div>
@@ -275,10 +279,11 @@
 
 
   <a class="mobile-phone-cta" href="tel:+34603678738" aria-label="Llamar al 603 67 87 38">
-    <svg class="ui-icon btn-icon" aria-hidden="true" focusable="false"><use href="assets/ui-icons.svg#icon-phone"></use></svg>
+    <svg class="ui-icon btn-icon" aria-hidden="true" focusable="false"><use href="assets/icons/ui-icons.svg#icon-phone"></use></svg>
     LLAMAR PARA PEDIR · 603 67 87 38
   </a>
-  <script src="carta.js" defer></script>
+  <script src="assets/js/carta.js" defer></script>
 
+  <script src="assets/js/pwa.js" defer></script>
 </body>
 </html>

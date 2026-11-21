@@ -3,9 +3,9 @@
    Carga carta.json, pinta categorías y muestra máximo 5 pizzas.
    ========================================================= */
 
-const CARTA_URL = "carta.json";
+const CARTA_URL = "assets/data/carta.json";
 const MAX_PIZZAS_HOME = 5;
-const LOGO_PLACEHOLDER = "assets/logorustica.png";
+const LOGO_PLACEHOLDER = "assets/images/logorustica.png";
 
 let cartaData = null;
 let filtroActivo = "all";
@@ -16,9 +16,9 @@ let filtroActivo = "all";
    ========================================================= */
 
 const ALERGENOS = {
-  gluten: { nombre: "Gluten", icono: "assets/alergenos/gluten.svg" },
-  lacteo: { nombre: "Leche", icono: "assets/alergenos/lacteo.svg" },
-  pescado: { nombre: "Pescado", icono: "assets/alergenos/pescado.svg" }
+  gluten: { nombre: "Gluten", icono: "assets/icons/alergenos/gluten.svg" },
+  lacteo: { nombre: "Leche", icono: "assets/icons/alergenos/lacteo.svg" },
+  pescado: { nombre: "Pescado", icono: "assets/icons/alergenos/pescado.svg" }
 };
 
 

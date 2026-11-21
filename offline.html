@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18240f">
+  <title>Sin conexión | Pizzería Rústica</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icons/favicon-32x32.png" type="image/png">
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body { background: #18240f; color: #f7f0dd; min-height: 100vh; margin: 0;
+      display: grid; place-items: center; font: 1rem/1.6 system-ui, sans-serif; padding: 2rem; }
+    main { max-width: 34rem; text-align: center; }
+    h1 { font-size: clamp(1.8rem, 6vw, 2.8rem); line-height: 1.2; }
+    a { color: #18240f; background: #f7f0dd; display: inline-block; border-radius: 50px;
+      padding: .75rem 1.4rem; font-weight: 700; text-decoration: none; margin: .4rem; }
+    a:focus-visible { outline: 3px solid #dda15e; outline-offset: 3px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>No tienes conexión</h1>
+    <p>Si has abierto la web antes, puedes seguir viendo la portada y la carta guardadas en tu dispositivo.</p>
+    <nav aria-label="Páginas disponibles sin conexión">
+      <a href="./index.html">Inicio</a>
+      <a href="./carta.html">Carta</a>
+    </nav>
+    <p>Para llamar o escribir por WhatsApp necesitarás cobertura móvil o conexión a Internet.</p>
+  </main>
+</body>
+</html>

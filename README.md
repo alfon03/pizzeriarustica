@@ -1,61 +1,66 @@
-# Pizzería Rústica — web unificada lista para GitHub Pages
+# Pizzería Rústica — web reorganizada + PWA
 
-Esta carpeta es la **raíz de publicación** de la web de Rústica. Contiene solo los archivos necesarios para publicar la página, más estas instrucciones. El ZIP original aportado por el propietario **no se modifica**.
+Sitio estático de Pizzería Rústica, listo para publicar en GitHub Pages y utilizar como PWA instalable.
 
-## Publicación en GitHub Pages
+## Archivos principales
 
-- Repositorio actual: `https://github.com/alfon03/pizzeriarustica`
-- Dominio personalizado: `rusticanapoletanastylexxl.es`
-- **Conservar `CNAME`** en la raíz del repositorio: GitHub Pages lo necesita para el dominio propio.
-- Las páginas `index.html` y `carta.html` deben estar en la raíz que sirve GitHub Pages (no dentro de una carpeta `Pizzeria/`).
-- **No sustituir ni borrar la carpeta `.git` del ordenador**. Copiar los archivos y carpetas de este ZIP al repositorio, actualizar los existentes y eliminar los ficheros obsoletos enumerados abajo.
-- No usar `git push --force` para resolver conflictos de sincronización.
+```text
+index.html                      Inicio de la web
+carta.html                      Carta online
+manifest.webmanifest            Metadatos para instalar la PWA
+sw.js                           Service worker / funcionamiento offline
+offline.html                    Página de respaldo sin conexión
+favicon.ico                     Favicon de compatibilidad
+CNAME                           Dominio personalizado (no borrar)
+googleedf3312aaa1c813e.html    Verificación Google (no borrar)
+assets/
+  css/style.css                 Hoja de estilos unificada
+  js/script.js                  Inicio, pizzas y novedades
+  js/carta.js                   Carta y filtros
+  js/resenas.js                 Reseñas
+  js/pwa.js                     Registro de service worker
+  data/carta.json               Pizzas, precios, alérgenos, bebidas y postres
+  data/resenas.json             Reseñas seleccionadas
+  images/                       Fotografías, texturas y decoración
+  icons/                        Iconos, logo PWA y SVG de alérgenos
+documentos/                     PDF de la carta completa y novedades
+```
 
-## Estructura limpia
+## Lo que ha cambiado
 
-- `index.html` — página principal.
-- `carta.html` — carta online con filtros.
-- `style.css` — **todos los estilos unificados**, incluidos responsive, novedades y corrección de «Nuestra masa».
-- `script.js`, `carta.js`, `resenas.js` — comportamiento de la web.
-- `carta.json`, `resenas.json` — datos editables; pizzas, precios y reseñas.
-- `assets/` — solo imágenes e iconos referenciados realmente en la web.
-- `documentos/Carta_Rustica_Completa_A5.pdf` — carta completa en PDF (2 páginas A5).
-- `documentos/Carta_Novedades_Rustica_A5.pdf` — PDF correcto de Novedades (1 página A5, logo mejorado).
-- `CNAME` — configuración del dominio personalizado.
-- `favicon*`, `apple-touch-icon.png` — iconos de navegador / móvil.
+- Se han ordenado los estilos, scripts, JSON, imágenes e iconos en subcarpetas.
+- Se han corregido **todas las rutas** de HTML, CSS y JS.
+- Se ha retirado del paquete el historial `.git/` (aprox. 149 archivos del ZIP original): **no se debe eliminar la carpeta `.git` del repositorio local que estés utilizando**.
+- Se han reunido dos imágenes decorativas idénticas (`leaf-footer-left.png` y `leaf-hero-top-left.png`) en `assets/images/leaf-decor-left.png`.
+- Se conservan los PDF, `CNAME`, el archivo de validación de Google y los datos existentes; no se han cambiado precios ni productos.
+- Se han añadido manifest, iconos 192/512/maskable, registro de service worker y experiencia offline.
 
-## Qué se ha eliminado respecto al ZIP recibido
+## Cómo publicarlo
 
-- Las cinco hojas CSS separadas `mejoras.css`, `acabados-v42.css`, `novedades-rustica.css`, `rustica-ajustes-responsive.css` y `rustica_correccion_pasion_movil.css`: su contenido **ya está integrado en `style.css`** en el mismo orden.
-- `app.js`, que ninguna página utilizaba; `script.js` y `carta.js` se conservan.
-- Cinco fotos de pizzas de demostración que no aparecían en pantalla (las 19 pizzas usan `imagen: null`).
-- Iconos SVG de alérgenos no utilizados: se conservan gluten, leche y pescado.
-- `favicon-source.png` (archivo de trabajo, no usado por el navegador).
-- El README antiguo y el historial `.git` del ZIP original **no se incluyen** en este paquete de publicación. La carpeta `.git` de tu repositorio local debe conservarse.
+1. Haz copia de seguridad de tu repositorio/servidor actual.
+2. Copia el **contenido** de esta carpeta a la **raíz del repositorio** de GitHub Pages (donde ya está `index.html`). **No copies una carpeta extra `Pizzeria_PWA/`**.
+3. En la copia del repositorio, borra los archivos viejos que hayan quedado fuera de estas nuevas rutas (`style.css`, `script.js`, `carta.js`, `resenas.js`, `carta.json`, `resenas.json`, y la antigua disposición de `assets/`), sin tocar `.git/`.
+4. Verifica que `CNAME` permanece en la raíz y publica los cambios normalmente. Nunca uses `git push --force` para resolver problemas de sincronización.
+5. Abre la web desde su dominio **HTTPS** y vuelve a cargar una vez para activar el service worker.
 
-## Aplicar estos cambios a tu carpeta existente en Windows
+Para comprobarlo localmente, desde esta carpeta ejecuta:
 
-1. Haz una copia de seguridad de `C:\Users\alfon\Desktop\Pizzeria`.
-2. Descomprime este ZIP en otra carpeta y copia su **contenido**, no la carpeta que lo contiene, a la carpeta `Pizzeria` del escritorio. Mantén la carpeta `.git` sin tocar.
-3. Elimina de tu carpeta `Pizzeria` solo los ficheros antiguos que se enumeran en «Qué se ha eliminado» (si siguen allí). La carpeta `assets/alergenos/` debe conservar sus 3 iconos actuales y puedes borrar el resto de SVG no usados.
-4. En PowerShell dentro de `Pizzeria`:
+```bash
+python -m http.server 8000
+```
 
-   ```powershell
-   git status
-   git add -A
-   git commit -m "Unificar web Rustica y corregir PDFs y movil"
-   git fetch origin
-   git status
-   ```
+Abre `http://localhost:8000` (no `file://`, ya que la carta se obtiene mediante `fetch`). La PWA es instalable en navegadores compatibles. Para instalarla en iPhone/iPad utiliza el menú Compartir → Añadir a pantalla de inicio.
 
-   Si Git indica que tu rama también está por detrás del remoto, primero resuelve la sincronización sin sobrescribir tu versión. Si no lo está: `git push origin main`.
+## Actualizaciones y uso sin conexión
 
-## Edición y pruebas
+- Portada, carta, imágenes e información de la carta quedan en caché tras una primera visita **con conexión**, cuando finaliza la instalación del service worker.
+- Al volver a tener conexión, se intenta descargar el JSON más reciente de pizzas y reseñas.
+- Los PDF no se precargan: se podrán abrir offline **si previamente se han abierto online** en el navegador y se han guardado en caché.
+- Google Fonts, Instagram, Google Maps, teléfono y WhatsApp son servicios externos y pueden necesitar conexión.
+- **Importante:** cambia el valor `VERSION` en `sw.js` tras publicar cambios en imágenes, estilos, páginas o textos para renovar la caché offline; el navegador cargará el nuevo service worker cuando detecte el cambio.
 
-- Para actualizar pizzas y precios: editar `carta.json` (19 pizzas, incluidas Pulled BBQ y Full Cheese, ambas a 13 €).
-- Para incorporar fotos reales: cambiar `imagen: null` por una ruta real en `assets/`.
-- Para actualizar las reseñas seleccionadas: editar `resenas.json`. No se sincronizan automáticamente con Google.
-- Para visualizar localmente, abrir terminal en esta carpeta y ejecutar `python -m http.server 8000`; navegar a `http://localhost:8000`. No usar `file://` porque la web carga JSON con `fetch`.
-- La información sobre alérgenos requiere validación con las fichas técnicas y posibles trazas antes de considerarse definitiva. Un queso sin lactosa **sigue conteniendo el alérgeno leche**.
+## Comprobaciones antes de publicar
 
-**Nota:** No se ha cambiado el texto de la web ni los precios respecto al ZIP aportado. Se ha corregido el PDF de Novedades duplicado y la disposición de la sección de masa en móvil.
+- Revisar fichas técnicas, trazas y alérgenos: los datos de la carta deben confirmarse con el negocio.
+- Probar los enlaces a cartas PDF, redes y el funcionamiento de botones en móvil.
+- Comprobar en herramientas de desarrollo → Aplicación → Manifest y Service Workers la instalación y el modo sin conexión.

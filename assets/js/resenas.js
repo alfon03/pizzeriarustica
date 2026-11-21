@@ -107,7 +107,7 @@
     render(); start();
   }, {passive:true});
 
-  fetch('resenas.json')
+  fetch('assets/data/resenas.json')
     .then(r => { if (!r.ok) throw new Error('Reseñas no disponibles'); return r.json(); })
     .then(data => {
       reviews = data.resenas.filter(r => r && typeof r.autor === 'string' &&

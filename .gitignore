@@ -1,0 +1,5 @@
+# El historial Git se mantiene localmente, no debe distribuirse dentro del ZIP.
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
