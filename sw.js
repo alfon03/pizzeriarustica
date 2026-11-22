@@ -3,7 +3,7 @@
    La web y los datos de la carta se precargan para poder consultarlos sin Internet.
    Los PDFs se guardan sólo después de abrirlos online (son archivos grandes).
 */
-const VERSION = '2026-11-21-v1';
+const VERSION = '2026-11-21-v2-icons-blanco-negro';
 const PREFIX = 'rustica-pwa-';
 const SHELL_CACHE = `${PREFIX}shell-${VERSION}`;
 const DATA_CACHE = `${PREFIX}datos-${VERSION}`;
